@@ -63,7 +63,7 @@ class LegacyV1Controller(token.controllers.Auth):
         token_id = user_ref['access']['token']['id']
         headers = [('X-Auth-Token', token_id)]
         headers.append(('X-Storage-Token', token_id))
-        headers.append(('X-Storage-Url', storage_url))
+        headers.append(('X-Storage-Url', str(storage_url)))
         headers.append(('Vary', 'X-Auth-Token,X-Storage-Token,X-Storage-Url'))
 
         # Go figure why RAX cloud is returning that
